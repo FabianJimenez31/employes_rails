@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Employesses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Identity</th>
+      <th>Name</th>
+      <th>Last name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>City</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employesses.each do |employess| %>
+      <tr>
+        <td><%= employess.identity %></td>
+        <td><%= employess.name %></td>
+        <td><%= employess.last_name %></td>
+        <td><%= employess.age %></td>
+        <td><%= employess.email %></td>
+        <td><%= employess.city %></td>
+        <td><%= link_to 'Show', employess %></td>
+        <td><%= link_to 'Edit', edit_employess_path(employess) %></td>
+        <td><%= link_to 'Destroy', employess, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employess', new_employess_path %>
